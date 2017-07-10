@@ -1,0 +1,16 @@
+{
+    "name": "seffka/bookshop",
+    "description": "bookshop",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "seffa4ka",
+            "email": "th-seffka@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "twig/twig": "^3.0@dev"
+    }
+}
