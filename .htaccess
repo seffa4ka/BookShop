@@ -1,3 +1,5 @@
+Options -Indexes
+
 RewriteEngine On
 RewriteBase /
 
@@ -7,7 +9,18 @@ RewriteCond %{REQUEST_URI} !\=
 RewriteCond %{REQUEST_URI} !\.
 RewriteCond %{REQUEST_URI} !\/$
 
+RedirectMatch 404 /\.git
+RedirectMatch 404 /node_modules
+RedirectMatch 404 /vendor
+RedirectMatch 404 /.gitignore
+RedirectMatch 404 /composer.json
+RedirectMatch 404 /composer.lock
+RedirectMatch 404 /gulpfile.js
+RedirectMatch 404 /package.json
+RedirectMatch 404 /README.md
+
 RewriteRule ^(.*[^\/])$ /$1/ [R=301,L]
+RewriteRule ^favicon\.ico$ /public/images/favicon.ico [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

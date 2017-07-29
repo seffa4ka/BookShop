@@ -17,7 +17,24 @@ class MainController extends Controller
   public function actionIndex()
   {
     //TODO
-    return $this->render('index');
+    return $this->twig('index', [
+      'title' => 'Book Shop',
+      'data' => [
+        '0' => [
+          'title' => 'first',
+          'text' => 'test text',
+        ],
+        '1' => [
+          'title' => 'test',
+          'text' => '',
+        ],
+        '2' => [
+          'title' => 'title',
+          'text' => 'text',
+        ],
+      ],
+      'age' => date('Y'),
+    ]);
   }
 
   /**
@@ -33,9 +50,8 @@ class MainController extends Controller
         if (isset($_POST['username']) && isset($_POST['password'])) {
           return $this->render('signin', $this->authentication($_POST['username'], $_POST['password']));
         } else {
-          return $this->render('signin', [
-              'error' => 'Invalid data.',
-          ]);
+          header('HTTP/1.0 400 Bad Request');
+          die('Bad Request');
         }
       } else {
         return $this->render('signin');
@@ -76,5 +92,31 @@ class MainController extends Controller
   {
     unset($_SESSION['auth']);
     $this->redirect('/');
+  }
+  
+  /**
+   * Тест Email.
+   */
+  public function actionSendEmail()
+  {
+    if (!isset($_SESSION['auth'])) {
+      $this->redirect('/');
+    }
+
+    if ($_POST) {
+      if (isset($_POST['to']) && isset($_POST['title']) && isset($_POST['msg'])) {
+        return $this->render('send-email', ['success' => $this
+          ->sendEmail(
+            $_POST['to'],
+            $_POST['title'],
+            $_POST['msg']
+        )]);
+      } else {
+        header('HTTP/1.0 400 Bad Request');
+        die('Bad Request');
+      }
+    } else {
+      return $this->render('send-email');
+    }
   }
 }

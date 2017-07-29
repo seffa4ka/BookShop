@@ -1,0 +1,21 @@
+{% extends "twig_templates/main.html.twig" %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+    <div>Index page with twig.</div>
+
+    {% include 'twig_templates/navigation.html.twig' %}
+
+    <ul>
+        {% for one in data %}
+            {% if one.text == '' %}
+                <li>{{ one.title|upper }}<p>Нет данных</p></li>
+            {% else %}
+                <li>{{ one.title|upper }}<p>{{ one.text }}</p></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block age %} {{ age }} {% endblock %}

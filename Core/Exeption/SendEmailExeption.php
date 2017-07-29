@@ -5,9 +5,9 @@ namespace App\Core\Exeption;
 use Exception;
 
 /**
- * ViewException.
+ * SendEmailException.
  */
-class ViewExeption extends Exception
+class SendEmailExeption extends Exception
 {
   
 }

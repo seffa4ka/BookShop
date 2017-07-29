@@ -2,8 +2,11 @@
 
 namespace App\Core\Exeption;
 
-use \Exception;
+use Exception;
 
+/**
+ * RouterException.
+ */
 class RouterExeption extends Exception
 {
   

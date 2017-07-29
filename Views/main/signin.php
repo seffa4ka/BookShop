@@ -12,7 +12,7 @@
   ?>
   <form role="form" action="" method="POST">
     <div>
-      <label for="inputUsername">Login</label>
+      <label for="inputUsername">Username</label>
       <input required type="text" id="inputUsername" placeholder="Enter Username" name="username">
     </div>
     <div>

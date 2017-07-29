@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "dbf617ff10dd75b2228c5813c9ab20e2",
+    "content-hash": "4ac2d453f562ffb1b3b9cc33c6067881",
     "packages": [
         {
-            "name": "psr/log",
+            "name": "doctrine/lexer",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-fig/log.git",
-                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
+                "url": "https://github.com/doctrine/lexer.git",
+                "reference": "cc709ba91eee09540091ad5a5f2616727662e41b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
-                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/cc709ba91eee09540091ad5a5f2616727662e41b",
+                "reference": "cc709ba91eee09540091ad5a5f2616727662e41b",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.3.2"
             },
             "type": "library",
             "extra": {
@@ -31,7 +31,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Psr\\Log\\": "Psr/Log/"
+                    "Doctrine\\Common\\Lexer\\": "lib/Doctrine/Common/Lexer"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -40,18 +40,137 @@
             ],
             "authors": [
                 {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
                 }
             ],
-            "description": "Common interface for logging libraries",
-            "homepage": "https://github.com/php-fig/log",
+            "description": "Base library for a lexer that can be used in Top-Down, Recursive Descent Parsers.",
+            "homepage": "http://www.doctrine-project.org",
             "keywords": [
-                "log",
-                "psr",
-                "psr-3"
+                "lexer",
+                "parser"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2017-07-24 09:37:08"
+        },
+        {
+            "name": "egulias/email-validator",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/egulias/EmailValidator.git",
+                "reference": "bc31baa11ea2883e017f0a10d9722ef9d50eac1c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/bc31baa11ea2883e017f0a10d9722ef9d50eac1c",
+                "reference": "bc31baa11ea2883e017f0a10d9722ef9d50eac1c",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/lexer": "^1.0.1",
+                "php": ">= 5.5"
+            },
+            "require-dev": {
+                "dominicsayers/isemail": "dev-master",
+                "phpunit/phpunit": "^4.8.0",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "suggest": {
+                "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Egulias\\EmailValidator\\": "EmailValidator"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eduardo Gulias Davis"
+                }
+            ],
+            "description": "A library for validating emails against several RFCs",
+            "homepage": "https://github.com/egulias/EmailValidator",
+            "keywords": [
+                "email",
+                "emailvalidation",
+                "emailvalidator",
+                "validation",
+                "validator"
+            ],
+            "time": "2017-01-30T22:07:36+00:00"
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swiftmailer/swiftmailer.git",
+                "reference": "dfb80aa5db347f67e7a75aa31fad0d07e1f82e91"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/dfb80aa5db347f67e7a75aa31fad0d07e1f82e91",
+                "reference": "dfb80aa5db347f67e7a75aa31fad0d07e1f82e91",
+                "shasum": ""
+            },
+            "require": {
+                "egulias/email-validator": "~2.0",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.1",
+                "symfony/phpunit-bridge": "~3.3@dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.0-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "lib/swift_required.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Corbyn"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "homepage": "http://swiftmailer.org",
+            "keywords": [
+                "email",
+                "mail",
+                "mailer"
+            ],
+            "time": "2017-06-21 14:23:14"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -113,17 +232,59 @@
             "time": "2017-06-14 15:44:48"
         },
         {
-            "name": "twig/twig",
-            "version": "dev-master",
+            "name": "theseer/directoryscanner",
+            "version": "1.3.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twigphp/Twig.git",
-                "reference": "aeec9c80f8dcf3ec2bfa3801d335030ab97e261c"
+                "url": "https://github.com/theseer/DirectoryScanner.git",
+                "reference": "549aa9fdbc47d50365db42d9ade35fdef65f854c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/aeec9c80f8dcf3ec2bfa3801d335030ab97e261c",
-                "reference": "aeec9c80f8dcf3ec2bfa3801d335030ab97e261c",
+                "url": "https://api.github.com/repos/theseer/DirectoryScanner/zipball/549aa9fdbc47d50365db42d9ade35fdef65f854c",
+                "reference": "549aa9fdbc47d50365db42d9ade35fdef65f854c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Arne Blankerts",
+                    "email": "arne@blankerts.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A recursive directory scanner and filter",
+            "time": "2015-03-24T21:28:20+00:00"
+        },
+        {
+            "name": "twig/twig",
+            "version": "2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "5ee1d1884f5bffe98feb28008adc8d69978d0882"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/5ee1d1884f5bffe98feb28008adc8d69978d0882",
+                "reference": "5ee1d1884f5bffe98feb28008adc8d69978d0882",
                 "shasum": ""
             },
             "require": {
@@ -138,12 +299,15 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
                 "psr-0": {
                     "Twig_": "lib/"
+                },
+                "psr-4": {
+                    "Twig\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -173,14 +337,143 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-04-18 14:02:43"
+            "time": "2017-07-22 07:33:53"
+        },
+        {
+            "name": "zetacomponents/base",
+            "version": "1.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zetacomponents/Base.git",
+                "reference": "f20df24e8de3e48b6b69b2503f917e457281e687"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zetacomponents/Base/zipball/f20df24e8de3e48b6b69b2503f917e457281e687",
+                "reference": "f20df24e8de3e48b6b69b2503f917e457281e687",
+                "shasum": ""
+            },
+            "require-dev": {
+                "zetacomponents/unit-test": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sergey Alexeev"
+                },
+                {
+                    "name": "Sebastian Bergmann"
+                },
+                {
+                    "name": "Jan Borsodi"
+                },
+                {
+                    "name": "Raymond Bosman"
+                },
+                {
+                    "name": "Frederik Holljen"
+                },
+                {
+                    "name": "Kore Nordmann"
+                },
+                {
+                    "name": "Derick Rethans"
+                },
+                {
+                    "name": "Vadym Savchuk"
+                },
+                {
+                    "name": "Tobias Schlitt"
+                },
+                {
+                    "name": "Alexandru Stanoi"
+                }
+            ],
+            "description": "The Base package provides the basic infrastructure that all packages rely on. Therefore every component relies on this package.",
+            "homepage": "https://github.com/zetacomponents",
+            "time": "2014-09-19T03:28:34+00:00"
+        },
+        {
+            "name": "zetacomponents/console-tools",
+            "version": "1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zetacomponents/ConsoleTools.git",
+                "reference": "30d67e9d04f458ac8cae4c49e50f81061460ff2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zetacomponents/ConsoleTools/zipball/30d67e9d04f458ac8cae4c49e50f81061460ff2c",
+                "reference": "30d67e9d04f458ac8cae4c49e50f81061460ff2c",
+                "shasum": ""
+            },
+            "require": {
+                "zetacomponents/base": "~1.8"
+            },
+            "require-dev": {
+                "zetacomponents/unit-test": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sergey Alexeev"
+                },
+                {
+                    "name": "Sebastian Bergmann"
+                },
+                {
+                    "name": "Jan Borsodi"
+                },
+                {
+                    "name": "Raymond Bosman"
+                },
+                {
+                    "name": "Frederik Holljen"
+                },
+                {
+                    "name": "Kore Nordmann"
+                },
+                {
+                    "name": "Derick Rethans"
+                },
+                {
+                    "name": "Vadym Savchuk"
+                },
+                {
+                    "name": "Tobias Schlitt"
+                },
+                {
+                    "name": "Alexandru Stanoi"
+                }
+            ],
+            "description": "A set of classes to do different actions with the console (also called shell). It can render a progress bar, tables and a status bar and contains a class for parsing command line options.",
+            "homepage": "https://github.com/zetacomponents",
+            "time": "2014-09-27T19:26:09+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "twig/twig": 20
+        "swiftmailer/swiftmailer": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -7,8 +7,8 @@ ini_set('display_errors','On');
  */
 define('ROOT', __DIR__);
 
-require_once ROOT . '/Core/function.php';
 require_once ROOT . '/vendor/autoload.php';
+require_once ROOT . '/Core/function.php';
 
 use App\Core\Router;
 
@@ -18,8 +18,7 @@ try {
   if (!Router::runOnPath()) {
     //TODO
     header("HTTP/1.0 404 Not Found");
-    $response = 'Page not found.';
-    debug($response);
+    die('Page not found.');
   }
 } catch (Exception $ex) {
   //TODO

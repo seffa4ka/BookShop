@@ -64,7 +64,7 @@ class View implements iView
 
     return $contents;
   }
-
+  
   /**
    * Вывод.
    *
